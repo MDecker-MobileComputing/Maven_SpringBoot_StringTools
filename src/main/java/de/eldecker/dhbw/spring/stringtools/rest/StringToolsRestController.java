@@ -14,15 +14,29 @@ import org.springframework.web.bind.annotation.RestController;
 import de.eldecker.dhbw.spring.stringtools.model.StringLaengeErgebnis;
 
 
+/**
+ * Klasse mit REST-Endpunkten für String-Operationen.
+ */
 @RestController
 @RequestMapping("/stringtools/v1")
-public class StringToolsApi {
+public class StringToolsRestController {
 
+	/**
+	 * Methode für REST-Endpunkt, die Länge eines als Pfadparameters übergebenen Strings zurückgibt.
+	 * Der String darf nicht nur aus Leerzeichen bestehen.
+	 * 
+	 * @param inputString Als Pfadparameter übergebener String, dessen Länge bestimmt werden soll;
+	 *                    darf nicht leer sein!
+	 * 
+	 * @return Im Erfolgsfall: Ergebnisobjekt mit Länge des Strings und HTTP-Status-Code 200 (OK);
+	 *         im Fehlerfall: HTTP-Status-Code 400 (Bad Request) und Ergebnisobjekt mit Fehlertext 
+	 *                        im Attribut {@code nachricht}.
+	 */
 	@GetMapping( "/laenge/{inputString}" ) 
 	public ResponseEntity<StringLaengeErgebnis> stringLaenge( @PathVariable String inputString ) {
 		
 		final String inputStringTrimmed = inputString.trim();
-		final int laenge = inputStringTrimmed.length();
+		final int    laenge             = inputStringTrimmed.length();
 		
 		StringLaengeErgebnis ergebnis = null;
 		
