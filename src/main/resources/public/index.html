@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>REST-API: String-Tools</title>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stringtools-style.css">
+</head>
+<body>
+
+    <h1>REST-API: String-Tools</h1>
+
+    <h2>Gültige Aufrufe</h2>
+    <ul>
+        <li><a href="/stringtools/v1/laenge/DHBW"              >Länge von "DHBW"</a></li>
+        <li><a href="/stringtools/v1/laenge/DHBW%20KA"         >Länge von "DHBW KA"</a></li>
+        <li><a href="/stringtools/v1/laenge/%20%20DHBW%20KA%20">Länge von "  DHBW KA "</a></li>
+    </ul>
+    <br><br>
+
+    <h2>Ungültige Aufrufe</h2>
+    <ul>
+        <li><a href="/stringtools/v1/laenge/%20"   >Leerer String (1 Leerzeichen)</a></li>
+        <li><a href="/stringtools/v1/laenge/%20%20">Leerer String (2 Leerzeichen)</a></li>
+    </ul>
+
+</body>
