@@ -21,6 +21,7 @@ import de.eldecker.dhbw.spring.stringtools.model.StringLaengeErgebnis;
 @RequestMapping("/stringtools/v1")
 public class StringToolsRestController {
 
+	
 	/**
 	 * Methode für REST-Endpunkt, die Länge eines als Pfadparameters übergebenen Strings zurückgibt.
 	 * Der String darf nicht nur aus Leerzeichen bestehen.
@@ -39,8 +40,7 @@ public class StringToolsRestController {
 		final int    laenge             = inputStringTrimmed.length();
 		
 		StringLaengeErgebnis ergebnis = null;
-		
-		
+				
 		if ( laenge > 0 ) {
 		
 			final String nachricht = 

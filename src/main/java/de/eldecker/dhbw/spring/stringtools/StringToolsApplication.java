@@ -4,6 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
+/**
+ * Einstiegspunkt für die Anwendung. 
+ */
 @SpringBootApplication
 public class StringToolsApplication {
 
